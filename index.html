@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WBC</title>
+    <link href="css/style.css" rel="stylesheet">
+    <!--<link href="http://127.0.0.1:2000/css/style.css" rel="stylesheet">-->
+    <meta name="viewport" content="width=device-width,  initial-scale=1">
+</head>
+<body>
+    <div id="Intro"></div>
+    <div id="MyMenu">
+        <div class="menu-tab" id="SecondTab"
+             onclick="if(onAnimationEnd===true){openEx('SecondTab','FirstTab','ThirdTab','SecondEx','#000')}">
+            <div class="tab-num">Наша помощь</div>
+        </div>
+        <div class="menu-tab" id="FirstTab"
+             onclick="if(onAnimationEnd===true){openEx('FirstTab','SecondTab','ThirdTab','FirstEx','#000')}">
+            <div class="tab-num">Зачем мы Вам?</div>
+        </div>
+        <div class="menu-tab" id="ThirdTab"
+             onclick="if(onAnimationEnd===true){openEx('ThirdTab','FirstTab','SecondTab','ThirdEx','#000')}">
+            <div class="tab-num">Оставить заявку</div>
+        </div>
+    </div>
+    <div id="Example">
+        <div id="FirstEx">
+            <div class="ex-content">
+                <div id="MenuBtn" onclick="if(onAnimationEnd===true){menuSwitcher()}">
+                    <span id="TopMS" class="menu-stick"></span>
+                    <span id="MiddleMS" class="menu-stick"></span>
+                    <span id="BottomMS" class="menu-stick"></span>
+                </div>
+                <div class="first-header">
+                    <div class="content-fitter content-flex">
+                        <div class="header-btn" onclick="alert('Если вы нашли эту кнопку - свяжитесь с нами!')">error</div>
+                    </div>
+                </div>
+
+                <div id="TextContainer">
+                    <div class="container-header">
+                        <p><span class="header-phrase-1">Ваш сайт</span> - это Ваша визитная карточка в цифровой форме</p>
+                    </div>
+                    <div class="container-info">
+                        <p>
+                            <span class="info-phrase-1">
+                                Наша команда готова подобрать идеальный дизайн и полностью создать сайт для Вашей компании.
+                            </span>
+                        </p>
+                        <p>
+                            <span class="info-phrase-2">
+                                Это может быть визитная карточка, сайт-каталог или воплощение Вашей личной идеи в реальность.
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="SecondEx">
+            <div class="ex-content">
+                <div class="first-header"></div>
+                <div class="text-rows">
+                    <div class="row-container">
+                        <h1>Домен</h1>
+                        <div class="row-image-container">
+                            <img alt="error" src="images/domain.png"/>
+                        </div>
+                        <p class="row-text-container">
+                            Ваше доменное имя - имя Вашего сайта. мы поможем Вам в выборе наиболее подходящего названия и выкупим соответствующий домен.
+                        </p>
+                    </div>
+                    <div class="row-container">
+                        <h1>Продвижение</h1>
+                        <div class="row-image-container">
+                            <img alt="error" src="images/promotion.png"/>
+                        </div>
+                        <p class="row-text-container">
+                            Чтобы о Ваших услугах знало как можно больше человек, необходим наиболее грамотный подход к рекламе.
+                            Мы можем заняться продвижением вашего сайта и увеличить поток клиентов.
+                        </p>
+                    </div>
+                    <div class="row-container">
+                        <h1>Поддрежка</h1>
+                        <div class="row-image-container">
+                            <img alt="error" src="images/support.png"/>
+                        </div>
+                        <p class="row-text-container">
+                            Поддержка сайта является очень важным условием для его стабильной работы.
+                            Мы предлагаем Вам месяц бесплатного обслуживания и консультаций.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="ThirdEx">
+            <div class="ex-content">
+                <div id="FormParallaxBox">
+                    <div class="first-header"></div>
+                    <div class="content-fitter">
+                        <div class="form-container">
+                            <!--<div class="form-info">Вы можете оставить заявку, и в скором времени с Вами свяжется менеджер, чтобы обсудить детали проекта.</div>-->
+                            <form id="FormBox">
+                                <div class="z-shadow" id="z-1"></div>
+                                <div class="z-shadow" id="z-2"></div>
+                                <div class="z-shadow" id="z-3"></div>
+                                <div class="z-shadow" id="z-4"></div>
+                                <input type="text" id="Name" class="form-input" placeholder="ФИО" required onkeydown="validationName()">
+                                <input type="text" id="Email" class="form-input" placeholder="example@ex.ru" required onkeydown="validationEmail()">
+                                <input type="tel" id="Phone" class="form-input" placeholder="+7XXXXXXXXXX" required onkeydown="validationPhone()">
+                                <button class="form-input submit-btn" type="button" onclick="if(document.getElementById('FormBox').classList.contains('valid')){httpGet()}else{alert('Необходимо правильно заполнить форму!')}">
+                                    Отправить
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 612 612" height="2em" width="2em"
+             id="Back" onclick="if(onAnimationEnd===true){closeEx(openProps)}">
+            <path d="M353.812,172.125c-7.478,0-14.21,2.926-19.335,7.612l-0.058-0.077L219.67,284.848c-5.91,5.451-9.295,13.101-9.295,21.152     s3.385,15.701,9.295,21.152L334.42,432.34l0.058-0.076c5.125,4.686,11.857,7.611,19.335,7.611     c15.836,0,28.688-12.852,28.688-28.688c0-8.357-3.634-15.836-9.353-21.076l0.058-0.076L281.52,306l91.685-84.054l-0.058-0.077     c5.719-5.221,9.353-12.68,9.353-21.057C382.5,184.977,369.648,172.125,353.812,172.125z M306,0C137.012,0,0,137.012,0,306     s137.012,306,306,306s306-137.012,306-306S474.988,0,306,0z M306,554.625C168.912,554.625,57.375,443.088,57.375,306     S168.912,57.375,306,57.375S554.625,168.912,554.625,306S443.088,554.625,306,554.625z"></path>
+        </svg>
+
+        <div id="LogoLetters">WBC</div>
+        <canvas id="stars"></canvas>
+    </div>
+
+
+    <script src="http://atuin.ru/js/art/stars.js" type="text/javascript"></script>
+    <script src="js/main-minimized.js" type="text/javascript"></script>
+    <!--<script src="http://127.0.0.1:2000/js/main-minimized.js" type="text/javascript"></script>-->
+</body>
+</html>
